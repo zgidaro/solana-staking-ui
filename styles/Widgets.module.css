@@ -1,0 +1,62 @@
+.widgets {
+    display: flex;
+    justify-content: center;
+    border-radius: 24px;
+    width: 100%;
+    margin: 64px 64px 96px 64px;
+}
+
+.widget {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 32px;
+    border-top: 1.5px solid #2E2E2E;
+    border-bottom: 1.5px solid #2E2E2E;
+    width: 250px;
+}
+
+.widget:not(:first-child) {
+    border-left: 1.5px solid #2E2E2E;
+}
+
+.widget:first-child {
+    border-left: 1.5px solid #2E2E2E;
+    border-top-left-radius: 24px;
+    border-bottom-left-radius: 24px;
+}
+
+.widget:last-child {
+    border-right: 1.5px solid #2E2E2E;
+    border-top-right-radius: 24px;
+    border-bottom-right-radius: 24px;
+}
+
+.title {
+    font-weight: bold;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: -0.01em;
+}
+
+.valueContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    justify-self: flex-end;
+    margin-top: 32px;
+}
+
+.value {
+    font-weight: bold;
+    font-size: 26px;
+    line-height: 38px;
+}
+
+.subvalue {
+    font-size: 16px;
+    line-height: 22px;
+    color: #A7A7A7;
+    letter-spacing: -0.01em;
+    margin-top: 8px;
+}

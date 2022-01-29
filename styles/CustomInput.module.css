@@ -1,0 +1,72 @@
+.customInputContainer {
+    display: flex;
+    flex-direction: column;
+    border: 1.5px solid #2E2E2E;
+    border-radius: 12px;
+    background-color: #1C1C1C;
+    padding: 16px;
+    position: relative;
+}
+
+.customInputLabels {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.customInputAmounts {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 24px;
+}
+
+.customInputAmountLabel {
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 22px;
+    letter-spacing: 0.01em;
+
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.customInputBalance {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 16px;
+    letter-spacing: 0.02em;
+
+    color: #FFFFFF;
+    opacity: 0.8;
+}
+
+.customInput {
+    height: 33px;
+    font-size: 24px;
+    line-height: 33px;
+    margin-left: 12px;
+
+    color: #FFFFFF;
+    background-color: transparent;
+}
+
+.customInputAmount {
+    display: flex;
+    align-items: center;
+}
+
+.customInputCenterIcon {
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 56px;
+    height: 56px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1.5px solid #2E2E2E;
+    border-radius: 50%;
+    background-color: #1C1C1C;
+}
