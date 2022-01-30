@@ -1,16 +1,17 @@
-import { Cluster } from "@solana/web3.js";
-import { createContext, Dispatch, SetStateAction } from "react";
+import { Connection } from "@solana/web3.js";
+import { createContext } from "react";
+import { StakePool } from "../lib/stake-pool-js/dist/schema";
 
 interface SoceanContextState {
-    cluster: Cluster;
     apr: number;
-    setApr: Dispatch<SetStateAction<number>>;
+    stakePool: StakePool | null;
+    connection: Connection | null;
 }
 
 const initialState: SoceanContextState = {
-    cluster: "mainnet-beta",
     apr: 0,
-    setApr: () => { },
+    stakePool: null,
+    connection: null,
 };
 
 export const SoceanContext = createContext(initialState);

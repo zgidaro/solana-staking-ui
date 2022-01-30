@@ -8,7 +8,7 @@ import { StakingHelp } from '../StakingHelp/StakingHelp';
 import { CustomTabs } from '../CustomTabs/CustomTabs';
 
 export const Staking = () => {
-    const { selectedTab, handleSelectedTab } = useStaking();
+    const { selectedTab, handleSelectedTab, depositFee } = useStaking();
 
     return (
         <>
@@ -25,7 +25,7 @@ export const Staking = () => {
                 ? (
                     <div className={styles.spaceBetween}>
                         <label>Deposit fees:</label>
-                        <label>0.15%</label>
+                        <label>{depositFee}%</label>
                     </div>
                 )
                 : null}

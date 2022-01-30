@@ -2,10 +2,10 @@ import React from 'react';
 import styles from '../../styles/Staking.module.css';
 import { StakingTab } from '../Staking/types';
 import { CustomTabsProps } from './types';
-import { useTabs } from './hooks';
+import { useCustomTabs } from './hooks';
 
 export const CustomTabs = (props: CustomTabsProps) => {
-    const { selectedTab, onChange, apr } = useTabs(props);
+    const { selectedTab, onChange, apr } = useCustomTabs(props);
 
     return (
         <div className={styles.tabs}>
