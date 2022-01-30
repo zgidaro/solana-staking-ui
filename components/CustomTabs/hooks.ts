@@ -1,16 +1,12 @@
 import { Cluster, clusterApiUrl, Connection, PublicKey } from "@solana/web3.js";
 import { useCallback, useContext, useEffect, useMemo, useState } from "react";
-import { getStakePoolAccount } from "../../../lib/stake-pool-js/dist";
-import { solanaConfig } from '../../../config/solana.config';
-import { SoceanContext } from '../../../contexts/SoceanContext';
+import { getStakePoolAccount } from "../../lib/stake-pool-js/dist";
+import { solanaConfig } from '../../config/solana.config';
+import { SoceanContext } from '../../contexts/SoceanContext';
+import { CustomTabsProps } from "./types";
 
-export const useTabs = () => {
-    const { apr, setApr, cluster } = useContext(SoceanContext);
-
-    const connection = useMemo(() => {
-        const network = clusterApiUrl(cluster);
-        return new Connection(network, "processed");
-    }, [cluster]);
+export const useTabs = ({ selectedTab, onChange }: CustomTabsProps) => {
+    const { apr, setApr, cluster, connection } = useContext(SoceanContext);
 
     const getApr = useCallback(async () => {
         try {
@@ -33,7 +29,7 @@ export const useTabs = () => {
     }, [getApr]);
 
     return {
-        apr
+        selectedTab, onChange, apr
     }
 };
 

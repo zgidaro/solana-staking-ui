@@ -1,11 +1,11 @@
 import React from 'react';
 import { useStaking } from './hooks';
-import { StakingTab, stakingTabs } from './types';
+import { StakingTab } from './types';
 import { Stake } from './Stake/Stake';
 import { Unstake } from './Unstake/Unstake';
 import styles from '../../styles/Staking.module.css';
 import { StakingHelp } from '../StakingHelp/StakingHelp';
-import { Tabs } from './Tabs/Tabs';
+import { CustomTabs } from '../CustomTabs/CustomTabs';
 
 export const Staking = () => {
     const { selectedTab, handleSelectedTab } = useStaking();
@@ -13,7 +13,7 @@ export const Staking = () => {
     return (
         <>
             <div className={styles.staking}>
-                <Tabs selectedTab={selectedTab} onChange={handleSelectedTab} />
+                <CustomTabs selectedTab={selectedTab} onChange={handleSelectedTab} />
                 {selectedTab === StakingTab.Stake ? <Stake /> : <Unstake />}
                 <StakingHelp />
             </div>

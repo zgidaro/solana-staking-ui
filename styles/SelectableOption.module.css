@@ -1,5 +1,5 @@
-.radioContainer,
-.radioContainerSelected {
+.selectableOption,
+.selectableOptionSelected {
     padding: 16px 24px;
     background-color: #333333;
     border-radius: 12px;
@@ -7,20 +7,22 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
+    cursor: pointer;
+    border: 1px solid transparent;
 }
 
-.radioContainerSelected {
+.selectableOptionSelected {
     background: rgba(242, 79, 131, 0.1);
     border: 1px solid rgba(242, 79, 131, 0.75);
 }
 
-.radioContainer:first-child,
-.radioContainerSelected:first-child {
+.selectableOption:first-child,
+.selectableOptionSelected:first-child {
     margin-top: 20px;
 }
 
-.radioContainer:not(:last-child),
-.radioContainerSelected:not(:last-child) {
+.selectableOption:not(:last-child),
+.selectableOptionSelected:not(:last-child) {
     margin-bottom: 8px;
 }
 
@@ -51,8 +53,8 @@
     color: #A7A7A7;
 }
 
-.radio,
-.radioSelected {
+.option,
+.optionSelected {
     height: 32px;
     width: 32px;
     display: flex;
@@ -62,7 +64,7 @@
     border: 1.5px solid #A7A7A7;
 }
 
-.radioSelected {
+.optionSelected {
     border: none;
     background-color: #F24F83;
 }
