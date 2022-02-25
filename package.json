@@ -1,5 +1,5 @@
 {
-  "name": "socean-ui",
+  "name": "solana-staking-ui",
   "private": true,
   "scripts": {
     "dev": "next dev",

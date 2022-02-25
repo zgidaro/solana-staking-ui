@@ -3,8 +3,9 @@ import { CustomInputProps } from './types';
 
 export const useCustomInput = ({ icon, amount, balance, onChange, onMax }: CustomInputProps) => {
 
-    const handleOnChange = useCallback(() => {
-        onChange?.(0);
+    const handleOnChange = useCallback((ev) => {
+        const value = +ev.currentTarget.value;
+        onChange?.(isNaN(value) || Math.sign(value) < 0 ? 0 : value);
     }, [onChange]);
 
     const maxButtonProps = {

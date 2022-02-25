@@ -2,7 +2,7 @@ import { useWallet } from "@solana/wallet-adapter-react";
 import { useWalletModal } from "@solana/wallet-adapter-react-ui";
 import { LAMPORTS_PER_SOL, PublicKey } from "@solana/web3.js";
 import { useCallback, useContext, useEffect, useState } from "react";
-import { SoceanContext } from "../../../contexts/SoceanContext";
+import { StakingContext } from "../../../contexts/StakingContext";
 
 export const useStake = () => {
     const { publicKey } = useWallet();
@@ -11,7 +11,7 @@ export const useStake = () => {
     const [balance, setBalance] = useState(0);
     const [value, setValue] = useState(0);
 
-    const { connection } = useContext(SoceanContext);
+    const { connection, stakedToken } = useContext(StakingContext);
 
     const getBalance = useCallback(async (publicKey: PublicKey) => {
         if (!connection) return;
@@ -41,6 +41,10 @@ export const useStake = () => {
         setValue(balance);
     }, [balance]);
 
+    const onChange = useCallback((value: number) => {
+        setValue(value);
+    }, []);
+
     const onClick = useCallback(() => {
         if (publicKey) {
 
@@ -51,6 +55,6 @@ export const useStake = () => {
     }, [publicKey, setVisible, visible]);
 
     return {
-        publicKey, value, balance, onClick, onMax,
+        publicKey, value, balance, stakedToken, onClick, onMax, onChange,
     };
 };

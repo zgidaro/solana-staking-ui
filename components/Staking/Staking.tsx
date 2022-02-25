@@ -8,7 +8,7 @@ import { StakingHelp } from '../StakingHelp/StakingHelp';
 import { CustomTabs } from '../CustomTabs/CustomTabs';
 
 export const Staking = () => {
-    const { selectedTab, handleSelectedTab, depositFee } = useStaking();
+    const { selectedTab, handleSelectedTab, depositFee, stakedToken } = useStaking();
 
     return (
         <>
@@ -19,7 +19,7 @@ export const Staking = () => {
             </div>
             <div className={styles.spaceBetween}>
                 <label>Exchange rate:</label>
-                <label>1 SOL = 0.976 scnSOL</label>
+                <label>1 SOL = 0.976 {stakedToken}</label>
             </div>
             {selectedTab === StakingTab.Stake
                 ? (

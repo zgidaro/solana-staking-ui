@@ -1,9 +1,9 @@
 import { useContext } from 'react';
-import { SoceanContext } from '../../contexts/SoceanContext';
+import { StakingContext } from '../../contexts/StakingContext';
 import { CustomTabsProps } from './types';
 
 export const useCustomTabs = ({ selectedTab, onChange }: CustomTabsProps) => {
-    const { apr } = useContext(SoceanContext);
+    const { apr } = useContext(StakingContext);
 
     return {
         selectedTab, onChange, apr
